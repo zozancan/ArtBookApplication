@@ -48,6 +48,13 @@ public class Main2Activity extends AppCompatActivity {
             button.setVisibility(View.VISIBLE);
             editText.setText("");
         } else {
+
+            String name = intent.getStringExtra("name");
+            editText.setText(name);
+            int position = intent.getIntExtra("position", 0);
+
+            imageView.setImageBitmap(MainActivity.artImage.get(position));
+
             button.setVisibility(View.VISIBLE);
         }
     }
