@@ -4,12 +4,15 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.io.IOException;
@@ -18,6 +21,7 @@ import java.io.IOException;
 public class Main2Activity extends AppCompatActivity {
 
     ImageView imageView;
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +29,22 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         imageView = findViewById(R.id.imageView);
+        editText = findViewById(R.id.editText);
+        Button button = findViewById(R.id.button);
 
         Intent intent = getIntent();
+
+        String info = intent.getStringExtra("info");
+
+        if (info.equalsIgnoreCase("new")) {
+
+            Bitmap background = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.ic_launcher_background);
+            imageView.setImageBitmap(background);
+            button.setVisibility(View.VISIBLE);
+            editText.setText("");
+        } else {
+            button.setVisibility(View.VISIBLE);
+        }
     }
 
 

@@ -1,8 +1,8 @@
 package com.example.zozancan.artbook;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.add_art) {
 
             Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+            intent.putExtra("info", "new");
             startActivity(intent);
         }
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView listView = (ListView) findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.listView);
 
     }
 
