@@ -43,7 +43,7 @@ public class Main2Activity extends AppCompatActivity {
 
         if (info.equalsIgnoreCase("new")) {
 
-            Bitmap background = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.ic_launcher_background);
+            Bitmap background = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.background);
             imageView.setImageBitmap(background);
             button.setVisibility(View.VISIBLE);
             editText.setText("");
